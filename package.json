@@ -1,0 +1,28 @@
+{
+  "name": "d3-geojson-context",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/d3-geojson-context.js",
+  "module": "index",
+  "jsnext:main": "index",
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -c -o build/d3-geojson-context.js",
+    "test": "tape test.js",
+    "prepublish": "npm run test && uglifyjs build/d3-geojson-context.js -c negate_iife=false -m -o build/d3-geojson-context.min.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "adaptive-bezier-curve": "^1.0.3",
+    "adaptive-quadratic-curve": "^1.0.2"
+  },
+  "devDependencies": {
+    "d3-geo": "^1.4.0",
+    "rollup": "^0.41.4",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "standard": "^8.6.0",
+    "tape": "^4.6.3",
+    "uglify-js": "^2.7.5"
+  }
+}
